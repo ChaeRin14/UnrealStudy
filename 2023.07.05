@@ -1,0 +1,71 @@
+// 학번 이름 나이 출력
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Person
+{
+	// 이름이랑 나이 
+protected:
+	string name;
+	int age;
+
+	// 이름 나이 초기화 시켜주기
+public:
+	Person(string pName, int pAge)
+	{
+		name = pName;
+		age = pAge;
+	}
+
+	// 이름 나이 프린트
+	void printInfo()
+	{
+		cout << "이름 : " << name << '\n';
+		cout << "나이 : " << age << '\n';
+	}
+};
+
+class Student : public Person
+{
+	// 학번
+private:
+	string studentID;
+	// person 안에 있는 이름 나이 가져와서 초기화 시켜주고
+	// 초기화 하는 이유 학생들의 이름 나이 학번을 한 번에 초기화 해서 다루기 위해
+public:
+	Student(string pName, int pAge, string pStudentID) : Person(pName, pAge)
+	{
+		// 학번 초기화
+		studentID = pStudentID;
+	}
+
+	// 프린트
+	void printStudentinfo()
+	{
+		printInfo();
+	}
+};
+
+int main()
+{
+	// 학번 이름 나이 출력하기 
+	string name, studentID;
+	int age;
+
+	cin >> name;
+	cout << "이름 : " << name << '\n';
+
+	cin >> age;
+	cout << "나이 : " << age << '\n';
+
+	cin >> studentID;
+	cout << "학번 : " << studentID << '\n';
+
+	// 함수 내부에 있는 이름 나이 학번 가져오기
+	Student student(name, age, studentID);
+	student.printStudentinfo();
+
+
+	return 0;
+}
