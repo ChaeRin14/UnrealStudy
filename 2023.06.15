@@ -1,0 +1,27 @@
+// 포인터 
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;   
+
+    cout << "int a;\n";
+    cout << "int *ptr = &a;\n";
+    
+    for (int i = 2; i < N + 1; i++) {
+        cout << "int ";  
+        for (int j = 2; j <= i + 1; j++) {
+            cout << "*";
+        }
+        
+        if (i == 2) {
+            cout << "ptr" << i << " = &ptr" << ";\n";
+        }
+        else {
+            cout << "ptr" << i << " = &ptr" << i - 1 << ";\n";
+    
+        }
+    }
+
+    return 0;
+}
