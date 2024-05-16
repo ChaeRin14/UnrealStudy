@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int N = 0;
+	cin >> N;
+    long long re = 1;
+
+	for (int i = 1; i <=N ; i++) {
+		re *= i;
+	}
+	cout << re /604800;
+	return 0;
+}
