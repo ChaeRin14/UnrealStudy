@@ -1,0 +1,40 @@
+// 인라인 함수
+#include <iostream>
+using namespace std;
+
+// 누가 더 큰 숫자인지 비교하는 인라인 함수
+inline int number(int a, int b)
+{
+	// 만약에 a가 b보다 크다면
+	if (a > b)
+	{
+		// a 출력
+		return a;
+	}
+	// 그렇지 않으면
+	else
+	{
+		// b 출력
+		return b;
+	}
+}
+
+int main() {
+	int a, b;
+	// 사용자 입력 받기
+	cin >> a >> b;
+
+	int maxA = number(a, b);
+	int maxB = number(b, a);
+
+	// 더 큰 값을 저장하기 위한 변수
+	int maxNum = maxA;
+
+	if (maxB > maxNum) {
+		maxNum = maxB;
+	}
+
+	cout << maxNum << '\n';
+
+	return 0;
+}
