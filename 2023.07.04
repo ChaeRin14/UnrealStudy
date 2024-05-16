@@ -1,0 +1,62 @@
+// 좌표 정렬
+#include <iostream>
+// 동적 배열을 구현하는 컨테이너
+#include <vector>
+// 알고리즘 함수를 제공함 소프트 함수를 사용하기 위해 (좌표 정렬)
+#include <algorithm>
+using namespace std;
+
+// 포인트 클래스 생성
+class Point {
+public:
+	int x;
+	int y;
+
+	// 생성자를 초기화 해 주기
+	//  _x, _y는 x랑 y에 담아준다
+	Point(int _x, int _y) {
+		x = _x;
+		y = _y;
+	}
+
+	// < 비교 연산자 오버로딩
+	bool operator<(const Point& other) const {
+		// x좌표를 기준으로 오름차순으로 정리
+		// 만약에 x좌표가 같다면
+		if (x == other.x) 
+		{
+			// y좌표를 기준으로 오름차순으로 정렬
+			return y < other.y;
+		}
+		return x < other.x;
+	}
+};
+
+int main() {
+	// 점의 개수
+	int N;
+	cin >> N;
+
+	// 포인트 타입을 원소로 가지는 백터인 포인츠를 선언
+	// 백터는 동적 크기 조정이 가능한 배열과 비슷한 자료구조
+	vector<Point> points;
+
+	// n번 반복하여 점의 좌표를 얻고
+	for (int i = 0; i < N; ++i) {
+		int x, y;
+		cin >> x >> y;
+		// 포인츠 백터에 함수를 사용해서 좌표를 포인트 객체로 추가하기
+		points.emplace_back(x, y);
+	}
+
+	// 소프트 함수를 사용해서 포인츠 백터를 정렬함 내가 포인트 클래스에서 오버로딩한 <연산자를 사용해서 정렬 기준 적용
+	// 소프트 함수 예시 f(x, y) = x + y는 입력으로 두 개의 숫자를 받아 그 합을 반환하는 이진 함수
+	sort(points.begin(), points.end());
+
+	// 정렬화 된 백터를 순회하면서 각 점의 좌표를 출력
+	for (const auto& point : points) {
+		cout << point.x << " " << point.y << '\n';
+	}
+
+	return 0;
+}
