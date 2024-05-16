@@ -1,0 +1,59 @@
+// A+B-5
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a, b;
+    while(1)                 //무한반복 true라는 뜻
+    {
+        cin>>a>>b;           //입력
+        if(a==0 && b==0)     //0 0인경우 반복 종료
+        {
+            break;
+        }else
+        {
+            cout<<a+b<<endl; //합 출력
+        }
+    }
+    return 0;
+}
+
+// 개수 세기
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // 배열 수 선언
+	int integer[100];
+  // 카운트
+	int count = 0;
+  // N개의 정수
+	int N = 0;
+	cin >> N;
+
+  
+	int num;
+  
+  // 반복문을 돌려서 사용자 입력 값보다 작은 수까지만 num에 담는다
+	for (int i = 0; i < N; i++)
+	{
+		cin >> num;
+    // 배열에 담기
+		integer[i] = num;
+	}
+
+  // V개의 정수 
+	int v = 0;
+	cin >> v;
+
+	for (int i = 0; i < N; i++)
+	{
+    // 만약 v가 위에서 담은 num의 수라면 
+		if (v == integer[i])
+      // +1씩 해서 개수를 센다 
+			count++;
+	}
+	cout << count;
+}
