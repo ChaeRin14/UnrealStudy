@@ -1,0 +1,46 @@
+// 시험 성적 
+// 조건 : 스위치문 쓰기
+
+#include <iostream>
+using namespace std;
+
+
+int main() {
+
+	int n;
+	// 사용자 입력 받기
+	cin >> n;
+
+	// 입력한 시험 점수를 10으로 나눈 몫에 따라 switch문을 사용하여 성적을 판단
+	switch (n / 10)
+	{
+	case 9:
+		cout << "A" << '\n';
+
+		break;
+
+	case 8:
+		cout << "B" << '\n';
+
+		break;
+
+	case 7:
+		cout << "C" << '\n';
+
+		break;
+
+	case 6:
+		cout << "C" << '\n';
+
+		break;
+	case 5:
+		cout << "D" << '\n';
+
+		break;
+
+	default:
+		cout << "F" << '\n';
+		break;
+	}
+	return 0;
+}
