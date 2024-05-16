@@ -1,0 +1,18 @@
+
+#include <iostream>
+ 
+using namespace std;
+ 
+int main() {
+ 
+    char de;
+    cin >> de;
+    
+    if(de=='N' || de=='n'){
+        cout << "Naver D2" <<"\n";
+    }else 
+    {
+        cout<<"Naver Whale" <<"\n";
+    }
+    return 0;
+}
