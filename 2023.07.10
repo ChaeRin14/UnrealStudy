@@ -1,0 +1,68 @@
+// 책
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Book {
+	public:
+	string bookTitle;
+	string name;
+
+public:
+	virtual void printInfo() {
+		cout <<"책 제목 : " << bookTitle << '\n';
+		cout << "작가 이름 : " << name << '\n';
+	}
+};
+
+class FictionBook : public Book {
+public:
+	void printInfo() override 
+	{
+		Book::printInfo();
+	}
+};
+
+class NonFictionBook : public Book {
+public:
+	void printInfo() override 
+	{
+		Book::printInfo();
+	}
+};
+
+int main() {
+	string bookType;
+	cout << "책 종류 (Fiction 또는 Non-Fiction): ";
+	cin >> bookType;
+
+	Book* book;
+
+	if (bookType == "Fiction") {
+		book = new FictionBook();
+	}
+	else if (bookType == "Non-Fiction") {
+		book = new NonFictionBook();
+	}
+	else {
+		cout << "잘못된 입력입니다.";
+		return 0;
+	}
+
+	cout << "책 제목: ";
+	cin >> book->bookTitle;
+
+	cout << "작가 이름: ";
+	cin >> book->name;
+
+	cout << '\n';
+	book->printInfo();
+
+	delete book;
+
+	return 0;
+}
+
+
