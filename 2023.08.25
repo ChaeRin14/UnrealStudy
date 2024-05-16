@@ -1,0 +1,40 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+int main() {
+	//헬멧, 방탄조끼 갯수 입력받기
+	int henum,venum = 0;
+	cin >> henum >> venum;
+
+	//갯수만큼 각각의 벡터선언
+	vector<long> helmet(henum);
+	vector<long> vest(venum);
+
+	for (int i = 0; i<henum; i++)
+	{	
+		//헬멧의 개별 방어력 입력하고, 해당 값 헬멧벡터에 넣기
+		long hebang = 0;
+		cin >> hebang;
+		helmet.push_back(hebang);
+	}
+
+	//헬멧 방어력중 가장큰 값 찾기
+	long helmetMax = *max_element(helmet.begin(), helmet.end());
+
+	for (int i = 0; i < venum ; i++)
+	{	
+		//조끼의 개별 방어력 입력하고, 해당 값 조끼벡터에 넣기
+		long vebang = 0;
+		cin >> vebang;
+		vest.push_back(vebang);
+	}
+
+	//조끼 방어력중 가장큰 값 찾기
+	long vestMax = *max_element(vest.begin(), vest.end());
+
+	//가장 큰값들 더해서 출력하기
+	cout << helmetMax + vestMax << "\n";
+	return 0;
+}
