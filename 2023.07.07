@@ -1,0 +1,52 @@
+// 면적
+#include <iostream>
+using namespace std;
+
+class Circle {
+private:
+	// 반지름
+	double radius;
+public:
+	// 반지름 값을 받아서 
+	Circle(double r)
+	{
+		// r 변수에 넣어줌
+		radius = r;
+	}
+
+	// 원의 면적
+	double Spehere() const 
+	{
+		return 3.14 * radius * radius;
+	}
+};
+
+class Rectangle {
+private:
+	// 가로 세로 변수
+	double width;
+	double height;
+public:
+	// 가로 세로
+	Rectangle(double w, double h)
+	{
+		width = w; 
+		height = h;
+	}
+
+	// 가로세로 구하기
+	double Wh() const 
+	{
+		return width * height;
+	}
+};
+
+int main() {
+	Circle circle(5.0);
+	Rectangle rectangle(3.0, 4.0);
+
+	cout << "Circle: " << circle.Spehere() << '\n';
+	cout << "Rectangle: " << rectangle.Wh() << '\n';
+
+	return 0;
+}
