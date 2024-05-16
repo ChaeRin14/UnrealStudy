@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int main() {
+	int rows;
+
+	cout << "삼각형의 높이를 입력하세요: ";
+	cin >> rows;
+
+	// 현재 행의 인덱스 알아오기
+	for (int i = 0; i < rows; i++) 
+	{
+		// 왼쪽에 공백 추가하기
+		for (int j = 0; j < i; j++) 
+		{
+			cout << " ";
+		}
+
+		// 오른쪽에 별표 출력
+		for (int k = rows; k > i; k--) 
+		{
+			cout << "*";
+		}
+		cout << '\n';
+	}
+
+	return 0;
+}
