@@ -1,0 +1,29 @@
+// 매개 변수
+#include <iostream>
+#using namespace std;
+
+
+void addNumber(int a, int b)
+{
+   int intPrint = a + b;
+   return a + b;
+}
+
+void multiplyNumbers(double c, double d)
+{
+   double doublePrint = c * d;
+   return c * d;
+}
+
+int main()
+{
+  cin >> int a, int b;
+  cout << "int형 : " << '\n';
+  addNumber(a, b);
+  
+  cin >> double c, double d;
+  cout << "double형 : " << '\n';
+  multiplyNumbers(c, d);
+  
+  return 0;
+}
