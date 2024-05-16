@@ -1,0 +1,24 @@
+// 별찍기 직각삼각형
+#include <iostream>
+#include <string>
+using namespace std;
+
+void triangleB(int n)
+{
+	for (int i = 0; i <= n; i++)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			cout << "*";
+		}
+		cout << '\n';
+	}
+}
+
+int main()
+{
+	int triangle;
+	cin >> triangle;
+	triangleB(triangle);
+	return 0;
+}
