@@ -1,0 +1,30 @@
+// 최댓값
+#include <iostream>
+using namespace std;
+
+void pointer()
+{
+	int numbers[9] = { 3, 29, 38, 12, 57, 74, 40, 85, 61 };
+	int* maxPtr = &numbers[0];
+	int index = 0;
+}
+
+int main() {
+
+	// 최댓값 위치 변수
+	int maxValueIndex;
+	// 최댓값을 갖고 있는 변수
+	int maxValue = -1;
+	pointer(numbers);
+
+	for (int i = 0; i < 9; i++) {
+
+		// 이전값들 중 최댓값보다 i번째 값이 더 크다면 최댓값과 그 인덱스를 갱신
+		if (numbers[i] > maxValue) {
+			maxValue = numbers[i];
+			maxValueIndex = i;
+		}
+	}
+
+	return 0;
+}
